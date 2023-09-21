@@ -1,0 +1,53 @@
+import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
+import { DrawerNavigationOptions } from "@react-navigation/drawer";
+import { MaterialTopTabNavigationOptions } from "@react-navigation/material-top-tabs";
+
+// 👇 theme
+import { theme } from "../theme";
+
+export const common_mainStackOptions: NativeStackNavigationOptions = {
+  animation: "flip",
+  headerStyle: {
+    backgroundColor: theme.colors.primary,
+  },
+  headerTintColor: theme.colors.white,
+  headerTitleAlign: "center",
+  statusBarColor: theme.colors.fadedBlack,
+  statusBarStyle: "light",
+  statusBarTranslucent: true,
+  headerShown: false,
+};
+
+export const drawer_mainStackOptions: DrawerNavigationOptions = {
+  headerStyle: {
+    backgroundColor: theme.colors.primary,
+  },
+  headerTintColor: theme.colors.white,
+  headerTitleStyle: {
+    fontFamily: theme.font.sourceCodeBold,
+  },
+};
+
+export const common_icon_props = {
+  size: theme.sizes.icon,
+  color: theme.colors.primary,
+};
+
+export const topTab_common_options: MaterialTopTabNavigationOptions = {
+  tabBarActiveTintColor: theme.colors.white,
+  tabBarInactiveTintColor: theme.colors.topTabsLabelInActiveColor,
+  tabBarStyle: {
+    backgroundColor: theme.colors.primary,
+    elevation: 0,
+  },
+  tabBarLabelStyle: {
+    // fontFamily: theme.font.sourceCodeMedium,
+    //fontSize: theme.sizes.title_fontSize * 0.5,
+ 
+    textTransform: "none",
+    fontWeight: "bold",
+  },
+  tabBarIndicatorStyle: {
+    backgroundColor: theme.colors.topTabsIndicatorColor,
+  },
+};
