@@ -10,6 +10,9 @@ import { get_common_mainStackOptions } from "../utilities/props.utility";
 // 👇 screens
 import OnBoarding from "../screens/OnBoarding/OnBoarding";
 import Home from "../screens/Home/Home";
+import DateProfileDetail from "../screens/DateProfile/DateProfileDetail";
+import LovedDatingProfile from "../screens/LovedDateProfile/LovedDatingProfile";
+import Chat from "../screens/Chat/Chat";
 
 export default function Navigator() {
   return (
@@ -17,6 +20,12 @@ export default function Navigator() {
       <Stack.Navigator screenOptions={get_common_mainStackOptions()}>
         <Stack.Screen name="OnBoardingScreen" component={OnBoarding} />
         <Stack.Screen name="homeScreen" component={Home} />
+        <Stack.Screen name="dateProfileScreen" component={DateProfileDetail} />
+        <Stack.Screen
+          name="lovedDatingProfileScreen"
+          component={LovedDatingProfile}
+        />
+        <Stack.Screen name="chatScreen" component={Chat} />
       </Stack.Navigator>
     </NavigationContainer>
   );

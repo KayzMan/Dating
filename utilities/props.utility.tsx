@@ -52,6 +52,18 @@ export const common_icon_props = {
   color: theme.colors.primary,
 };
 
+export const common_text_input_props = {
+  underlineColor: "transparent",
+  underlineColorAndroid: "transparent",
+  activeUnderlineColor: "transparent",
+  activeOutlineColor: theme.colors.primary,
+  cursorColor: theme.colors.primary,
+  placeholderTextColor: theme.colors.gray,
+  textColor: theme.colors.black,
+  selectionColor: theme.colors.primary,
+  theme: theme,
+};
+
 export const topTab_common_options: MaterialTopTabNavigationOptions = {
   tabBarActiveTintColor: theme.colors.white,
   tabBarInactiveTintColor: theme.colors.topTabsLabelInActiveColor,

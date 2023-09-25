@@ -28,6 +28,7 @@ export default function MyText({
           fontFamily: fontWeight
             ? theme.font[fontWeight]
             : theme.font.cantarell,
+          color: theme.colors.black,
         },
         style,
       ]}

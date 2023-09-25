@@ -1,7 +1,8 @@
-import { TouchableOpacity, View, Pressable } from "react-native";
-import React, { Dispatch, SetStateAction } from "react";
+import { useGlobalContext } from "../../context/MyGlobalContext";
+import { TouchableOpacity, View } from "react-native";
+import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-// import { TouchableRipple } from "react-native-paper";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
 
 // 👇 theme
 import { theme } from "../../theme";
@@ -13,15 +14,24 @@ import { homeStyles } from "../../screens/Home/home.styles";
 import { common_icon_props } from "../../utilities/props.utility";
 import { scrollListToPosition } from "../../utilities/methods.utility";
 
+// 👇 models
+import { mainNavigationProps } from "../../navigation/mainNavigator.models";
+
 export default function ActionButtons({
   profilesListRef,
-  currentIndex,
-  setCurrentIndex,
 }: {
   profilesListRef: React.MutableRefObject<null>;
-  currentIndex: number;
-  setCurrentIndex: Dispatch<SetStateAction<number>>;
 }) {
+  const {
+    profiles,
+    currentIndex,
+    setCurrentIndex,
+    setSelectedProfile,
+    selectedProfile,
+  } = useGlobalContext();
+
+  const navigation = useNavigation<NavigationProp<mainNavigationProps>>();
+
   return (
     <View style={homeStyles.actionButtonsContainer}>
       <TouchableOpacity
@@ -29,6 +39,7 @@ export default function ActionButtons({
         onPress={() => {
           scrollListToPosition(profilesListRef, currentIndex + 1, true);
           setCurrentIndex(currentIndex + 1);
+          setSelectedProfile(profiles[currentIndex + 1]);
         }}
         style={[
           homeStyles.actionButton,
@@ -46,7 +57,10 @@ export default function ActionButtons({
 
       <TouchableOpacity
         activeOpacity={theme.sizes.touchableOpacity_medium}
-        onPress={() => {}}
+        onPress={() => {
+          setSelectedProfile(profiles[currentIndex]);
+          navigation.navigate("lovedDatingProfileScreen");
+        }}
         style={[
           homeStyles.actionButton,
           homeStyles.middle_actionButton,
@@ -64,7 +78,10 @@ export default function ActionButtons({
 
       <TouchableOpacity
         activeOpacity={theme.sizes.touchableOpacity_medium}
-        onPress={() => {}}
+        onPress={() => {
+          setSelectedProfile(profiles[currentIndex]);
+          navigation.navigate("chatScreen");
+        }}
         style={[
           homeStyles.actionButton,
           {

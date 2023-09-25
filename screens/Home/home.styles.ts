@@ -15,7 +15,7 @@ export const homeStyles = StyleSheet.create({
   container: {
     flex: 1,
     // paddingHorizontal: theme.sizes.appPadding,
-    paddingVertical: theme.sizes.appPadding * 2,
+    paddingVertical: theme.sizes.appPadding,
     // paddingBottom: theme.sizes.appPadding * 5,
     // minHeight: height,
   },
@@ -26,7 +26,7 @@ export const homeStyles = StyleSheet.create({
     padding: theme.sizes.appPadding,
     paddingVertical: theme.sizes.appPadding * 1.5,
     borderRadius: theme.sizes.radius,
-    marginHorizontal: theme.sizes.appPadding,
+    marginHorizontal: theme.sizes.appPadding * 2,
   },
   topLeft: {
     ...center_flexRow,
@@ -54,8 +54,8 @@ export const homeStyles = StyleSheet.create({
   },
   profileLinearGradient: {
     position: "absolute",
-    left: 10,
-    right: 10,
+    left: theme.sizes.appPadding * 2,
+    right: theme.sizes.appPadding * 2,
     bottom: 0,
     top: 0,
     borderRadius: theme.sizes.radius * 2,
@@ -64,15 +64,15 @@ export const homeStyles = StyleSheet.create({
     borderRadius: theme.sizes.radius * 2,
     objectFit: "cover",
     resizeMode: "cover",
-    marginHorizontal: theme.sizes.appPadding,
+    marginHorizontal: theme.sizes.appPadding * 2,
   },
   profileAvatarContainer: {
     width: "100%",
   },
   profileBottom: {
     position: "absolute",
-    bottom: 20,
-    left: 20,
+    bottom: theme.sizes.appPadding * 2,
+    left: theme.sizes.appPadding * 2,
   },
   profileSocialLinks: {
     ...center_flexRow,
@@ -95,6 +95,8 @@ export const homeStyles = StyleSheet.create({
     // marginTop: theme.sizes.appPadding * 5,
     borderRadius: theme.sizes.radius * 3000,
     padding: theme.sizes.appPadding * 1.5,
+    width: 56,
+    height: 56,
   },
   middle_actionButton: {
     marginTop: 0,

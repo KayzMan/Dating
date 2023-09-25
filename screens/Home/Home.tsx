@@ -21,10 +21,9 @@ import ActionButtons from "../../components/Home/ActionButtons";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const { profiles } = useGlobalContext();
+  const { profiles, setCurrentIndex, setSelectedProfile } = useGlobalContext();
   const { height, width } = useWindowDimensions();
   let profilesListRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   // 👇 component did mount.
   useEffect(() => {
@@ -63,17 +62,14 @@ export default function Home() {
             keyboardDismissMode="on-drag"
             onPageSelected={(e) => {
               setCurrentIndex(e.nativeEvent.position);
+              setSelectedProfile(profiles[e.nativeEvent.position]);
             }}
           >
             {profiles?.map((item) => (
               <Profile key={item.id} {...item} />
             ))}
           </PagerView>
-          <ActionButtons
-            profilesListRef={profilesListRef}
-            currentIndex={currentIndex}
-            setCurrentIndex={setCurrentIndex}
-          />
+          <ActionButtons profilesListRef={profilesListRef} />
         </View>
       )}
     </ContainerView>

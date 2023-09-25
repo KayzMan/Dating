@@ -11,6 +11,10 @@ import Navigator from "./navigation/Navigator";
 
 // 👇 controllers
 import { loadProfiles } from "./screens/Home/home.controller";
+import { useState } from "react";
+
+// 👇 models
+import { iProfileItem } from "./components/Home/ProfileItem/profileItem.model";
 
 export default function App() {
   const [Cantarell_FontLoaded] = useFonts({
@@ -25,9 +29,21 @@ export default function App() {
   temp_theme.colors.primary = theme.colors.primary;
   temp_theme.colors.secondaryContainer = "transparent";
 
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [selectedProfile, setSelectedProfile] = useState<iProfileItem>(
+    loadProfiles()[0]
+  );
+
   return (
     <MyGlobalContext.Provider
-      value={{ Cantarell_FontLoaded, profiles: loadProfiles() }}
+      value={{
+        Cantarell_FontLoaded,
+        profiles: loadProfiles(),
+        currentIndex,
+        setCurrentIndex,
+        selectedProfile,
+        setSelectedProfile,
+      }}
     >
       <PaperProvider theme={theme}>
         <SafeAreaView style={styles.container}>
@@ -42,7 +58,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     backgroundColor: theme.colors.lightContainerBackground,
   },
 });

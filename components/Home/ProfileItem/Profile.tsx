@@ -1,8 +1,10 @@
+import { useGlobalContext } from "../../../context/MyGlobalContext";
 import { View, useWindowDimensions, TouchableOpacity } from "react-native";
 import React from "react";
 import { Avatar } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
 
 // 👇 theme
 import { theme } from "../../../theme";
@@ -15,6 +17,7 @@ import { common_icon_props } from "../../../utilities/props.utility";
 
 // 👇 models
 import { iProfileItem } from "./profileItem.model";
+import { mainNavigationProps } from "../../../navigation/mainNavigator.models";
 
 // 👇 components
 import MyText from "../../Global/MyText/MyText";
@@ -25,13 +28,18 @@ export default function Profile({
   description,
 }: iProfileItem) {
   const { width, height } = useWindowDimensions();
+  const navigation = useNavigation<NavigationProp<mainNavigationProps>>();
+  const getWidth = (_width: number): "100%" => "100%";
 
-  const getWidth = (width: number): "100%" => "100%";
+  const { profiles, setSelectedProfile, currentIndex } = useGlobalContext();
 
   return (
     <TouchableOpacity
       activeOpacity={theme.sizes.touchableOpacity_high}
-      onPress={() => {}}
+      onPress={() => {
+        navigation.navigate("dateProfileScreen");
+        setSelectedProfile(profiles[currentIndex]);
+      }}
       style={[homeStyles.profileContainer, { height: height / 1.5 }]}
     >
       <Avatar

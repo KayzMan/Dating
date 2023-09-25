@@ -3,18 +3,21 @@ import {
   StyleSheet,
   ScrollViewProps,
   useWindowDimensions,
+  Platform,
+  StatusBar,
 } from "react-native";
 import React from "react";
 
 // 👇 theme
 import { theme } from "../../../theme";
 
-export default function ContainerView({ children }: ScrollViewProps) {
+export default function ContainerView({ children, style }: ScrollViewProps) {
   const { height, width } = useWindowDimensions();
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       backgroundColor: theme.colors.lightContainerBackground,
       // padding: theme.sizes.appPadding,
     },
@@ -34,7 +37,7 @@ export default function ContainerView({ children }: ScrollViewProps) {
       //   width >= 767 ? styles.containerWeb : styles.container,
       //   width >= 1200 && { minWidth: width },
       // ]}
-      style={styles.container}
+      style={[styles.container, style]}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
     >

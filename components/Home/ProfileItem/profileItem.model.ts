@@ -5,6 +5,8 @@ export interface iProfileItem {
   avatar: ImageSourcePropType;
   nameAndAge: string;
   description: string;
+  about: string;
+  interests: string[];
 }
 
 export interface iProfileItemProps {
