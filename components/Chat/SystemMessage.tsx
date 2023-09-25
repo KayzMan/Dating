@@ -1,10 +1,17 @@
-import { View, Text } from "react-native";
 import React from "react";
 
-export default function SystemMessage() {
-  return (
-    <View>
-      <Text>SystemMessage</Text>
-    </View>
-  );
+// 👇 theme
+import { theme } from "../../theme";
+
+// 👇 styles
+import { chatStyles } from "../../screens/Chat/chat.styles";
+
+// 👇 models
+import { iSystemMessage } from "./messages.model";
+
+// 👇 components
+import MyText from "../Global/MyText/MyText";
+
+export default function SystemMessage({ id, message }: iSystemMessage) {
+  return <MyText style={chatStyles.chats_systemMessage}>{message}</MyText>;
 }

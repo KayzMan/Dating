@@ -13,6 +13,7 @@ import Home from "../screens/Home/Home";
 import DateProfileDetail from "../screens/DateProfile/DateProfileDetail";
 import LovedDatingProfile from "../screens/LovedDateProfile/LovedDatingProfile";
 import Chat from "../screens/Chat/Chat";
+import YourProfile from "../screens/YourProfile/YourProfile";
 
 export default function Navigator() {
   return (
@@ -26,6 +27,7 @@ export default function Navigator() {
           component={LovedDatingProfile}
         />
         <Stack.Screen name="chatScreen" component={Chat} />
+        <Stack.Screen name="yourProfileScreen" component={YourProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

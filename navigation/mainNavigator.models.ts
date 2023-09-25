@@ -4,4 +4,5 @@ export type mainNavigationProps = {
   dateProfileScreen: string | undefined;
   lovedDatingProfileScreen: string | undefined;
   chatScreen: string | undefined;
+  yourProfileScreen: string | undefined;
 };

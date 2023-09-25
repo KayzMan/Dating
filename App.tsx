@@ -1,4 +1,10 @@
-import { StyleSheet, SafeAreaView, StatusBar, Platform } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  StatusBar,
+  Platform,
+  LogBox,
+} from "react-native";
 import { Provider as PaperProvider, useTheme } from "react-native-paper";
 import { useFonts } from "expo-font";
 import { MyGlobalContext } from "./context/MyGlobalContext";
@@ -11,7 +17,7 @@ import Navigator from "./navigation/Navigator";
 
 // 👇 controllers
 import { loadProfiles } from "./screens/Home/home.controller";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // 👇 models
 import { iProfileItem } from "./components/Home/ProfileItem/profileItem.model";
@@ -33,6 +39,11 @@ export default function App() {
   const [selectedProfile, setSelectedProfile] = useState<iProfileItem>(
     loadProfiles()[0]
   );
+
+  // 👇 component did mount.
+  useEffect(() => {
+    LogBox.ignoreAllLogs(true);
+  }, []);
 
   return (
     <MyGlobalContext.Provider

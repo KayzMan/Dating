@@ -20,11 +20,11 @@ export const chatStyles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   headerContainer: {
-    borderBottomColor: theme.colors.gray_variableFade(0.045),
+    borderBottomColor: theme.colors.gray_variableFade(0.05),
     borderBottomWidth: 1,
     top: -1.4,
     width: "100%",
-    marginBottom: theme.sizes.appPadding * 2,
+    paddingBottom: theme.sizes.appPadding * 1,
   },
   detailContainer: {
     ...center_flexRow,
@@ -37,6 +37,7 @@ export const chatStyles = StyleSheet.create({
   },
   header_nameAndAge: {
     fontSize: theme.sizes.title_fontSize * 0.6,
+    marginBottom: theme.sizes.appPadding * 0.2,
   },
   header_description: {
     fontSize: theme.sizes.title_fontSize * 0.5,
@@ -45,15 +46,32 @@ export const chatStyles = StyleSheet.create({
   chatsContainer: {
     flex: 1,
     padding: theme.sizes.appPadding,
-    paddingVertical: theme.sizes.appPadding * 2,
-    paddingBottom: theme.sizes.appPadding * 3,
+    paddingVertical: theme.sizes.appPadding * 3,
+    // paddingBottom: theme.sizes.appPadding * 3,
   },
+  chats_messageItem: {
+    borderRadius: theme.sizes.radius * 1.2,
+    padding: theme.sizes.appPadding,
+    marginVertical: theme.sizes.appPadding * 0.6,
+  },
+  chats_messageItemText: {
+    // color: "",
+  },
+  chats_systemMessage: {
+    alignSelf: "center",
+    textAlign: "center",
+    marginVertical: theme.sizes.appPadding,
+    fontSize: theme.sizes.title_fontSize * 0.5,
+  },
+
   sendMessageContainer: {
-    position: "absolute",
-    bottom: 10,
-    left: 0,
-    right: 0,
+    // position: "absolute",
+    // bottom: 10,
+    // left: 0,
+    // right: 0,
     paddingHorizontal: theme.sizes.appPadding,
+    backgroundColor: theme.colors.white,
+    marginBottom: theme.sizes.appPadding * 1.6,
   },
   sendMessageWrapper: {
     ...center_flexRow_spaceApart,
