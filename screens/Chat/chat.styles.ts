@@ -17,14 +17,17 @@ export const chatStyles = StyleSheet.create({
     width: width,
     maxWidth: 500,
     backgroundColor: theme.colors.white,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop:
+      Platform.OS === "android"
+        ? StatusBar.currentHeight
+          ? StatusBar.currentHeight * 1.5
+          : theme.sizes.appPadding * 2
+        : 0,
   },
   headerContainer: {
-    borderBottomColor: theme.colors.gray_variableFade(0.05),
-    borderBottomWidth: 1,
     top: -1.4,
     width: "100%",
-    paddingBottom: theme.sizes.appPadding * 1,
+    paddingBottom: theme.sizes.appPadding * 2.5,
   },
   detailContainer: {
     ...center_flexRow,
@@ -47,7 +50,8 @@ export const chatStyles = StyleSheet.create({
     flex: 1,
     padding: theme.sizes.appPadding,
     paddingVertical: theme.sizes.appPadding * 3,
-    // paddingBottom: theme.sizes.appPadding * 3,
+    borderTopColor: theme.colors.gray_variableFade(0.05),
+    borderTopWidth: 1,
   },
   chats_messageItem: {
     borderRadius: theme.sizes.radius * 1.2,

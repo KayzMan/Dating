@@ -1,13 +1,8 @@
-import {
-  StyleSheet,
-  SafeAreaView,
-  StatusBar,
-  Platform,
-  LogBox,
-} from "react-native";
+import { StyleSheet, SafeAreaView, StatusBar, LogBox } from "react-native";
 import { Provider as PaperProvider, useTheme } from "react-native-paper";
 import { useFonts } from "expo-font";
 import { MyGlobalContext } from "./context/MyGlobalContext";
+import { useEffect, useState } from "react";
 
 // 👇 theme
 import { theme } from "./theme";
@@ -17,7 +12,6 @@ import Navigator from "./navigation/Navigator";
 
 // 👇 controllers
 import { loadProfiles } from "./screens/Home/home.controller";
-import { useEffect, useState } from "react";
 
 // 👇 models
 import { iProfileItem } from "./components/Home/ProfileItem/profileItem.model";

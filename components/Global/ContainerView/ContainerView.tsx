@@ -17,7 +17,12 @@ export default function ContainerView({ children, style }: ScrollViewProps) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+      paddingTop:
+        Platform.OS === "android"
+          ? StatusBar.currentHeight
+            ? StatusBar.currentHeight * 1.2
+            : theme.sizes.appPadding * 1.5
+          : 0,
       backgroundColor: theme.colors.lightContainerBackground,
       // padding: theme.sizes.appPadding,
     },

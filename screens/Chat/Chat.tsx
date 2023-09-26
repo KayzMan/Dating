@@ -8,19 +8,16 @@ import { theme } from "../../theme";
 import { chatStyles } from "./chat.styles";
 
 // 👇 components
-import ContainerView from "../../components/Global/ContainerView/ContainerView";
 import TopAppBar from "../../components/Chat/TopAppBar";
 import ChatArea from "../../components/Chat/ChatArea";
 import SendMessageBox from "../../components/Chat/SendMessageBox";
 
 export default function Chat() {
   return (
-    // <ContainerView>
     <View style={chatStyles.container}>
       <TopAppBar />
       <ChatArea />
       <SendMessageBox />
     </View>
-    // </ContainerView>
   );
 }

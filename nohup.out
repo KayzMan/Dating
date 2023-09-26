@@ -83,3 +83,47 @@ WARNING | UpdateCheck: Failure: Error
 WARNING | UpdateCheck: failed to get the latest version, skipping check (current version '32.1.14-10330179')
 INFO    | Info: Sandboxing disabled by user. ((null):0, (null))
 WARNING | UpdateCheck: Failure: Error
+ERROR   | adb protocol fault (couldn't read status length)
+INFO    | Wait for emulator (pid 26092) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+INFO    | Android emulator version 32.1.14.0 (build_id 10330179) (CL:N/A)
+INFO    | Found systemPath /home/coder/Android/Sdk/system-images/android-30/google_apis_playstore/x86/
+WARNING | Please update the emulator to one that supports the feature(s): Vulkan
+WARNING | cannot add library /home/coder/Android/Sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+MESA-INTEL: warning: Ivy Bridge Vulkan support is incomplete
+INFO    | Storing crashdata in: /tmp/android-coder/emu-crash.db, detection is enabled
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+INFO    | added library /home/coder/Android/Sdk/emulator/lib64/vulkan/libvulkan.so
+host doesn't support requested feature: CPUID.80000001H:ECX.abm [bit 5]
+host doesn't support requested feature: CPUID.80000001H:ECX.abm [bit 5]
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8554, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_40849.ini
+INFO    | Setting display: 0 configuration to: 1080x2280, dpi: 440x440 
+WARNING | UpdateCheck: Failure: Error
+WARNING | UpdateCheck: failed to get the latest version, skipping check (current version '32.1.14-10330179')
+INFO    | Info: Sandboxing disabled by user. ((null):0, (null))
+WARNING | UpdateCheck: Failure: Error
+INFO    | Wait for emulator (pid 40849) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+WARNING | State saving failed, cleaning out the snapshot.
+INFO    | Deleting snapshot default_boot
+INFO    | Android emulator version 32.1.14.0 (build_id 10330179) (CL:N/A)
+INFO    | Found systemPath /home/coder/Android/Sdk/system-images/android-30/google_apis_playstore/x86/
+WARNING | Please update the emulator to one that supports the feature(s): Vulkan
+WARNING | cannot add library /home/coder/Android/Sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+MESA-INTEL: warning: Ivy Bridge Vulkan support is incomplete
+INFO    | Storing crashdata in: /tmp/android-coder/emu-crash.db, detection is enabled
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+INFO    | added library /home/coder/Android/Sdk/emulator/lib64/vulkan/libvulkan.so
+host doesn't support requested feature: CPUID.80000001H:ECX.abm [bit 5]
+host doesn't support requested feature: CPUID.80000001H:ECX.abm [bit 5]
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8554, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_44630.ini
+INFO    | Setting display: 0 configuration to: 1080x2280, dpi: 440x440 
+WARNING | UpdateCheck: Failure: Error
+WARNING | UpdateCheck: failed to get the latest version, skipping check (current version '32.1.14-10330179')
+INFO    | Info: Sandboxing disabled by user. ((null):0, (null))
+INFO    | Boot completed in 77319 ms
+INFO    | Increasing screen off timeout, logcat buffer size to 2M.
+INFO    | Revoking microphone permissions for Google App.
+INFO    | Wait for emulator (pid 44630) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
