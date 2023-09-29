@@ -16,6 +16,7 @@ const CardSkeleton = ({
 }) => {
   const AnimatedLG = Animated.createAnimatedComponent(LinearGradient);
   const animatedValue = new Animated.Value(0);
+  const iterations = 10;
 
   useEffect(() => {
     const loop = Animated.loop(
@@ -25,7 +26,7 @@ const CardSkeleton = ({
         easing: Easing.linear,
         useNativeDriver: Platform.OS === "web" ? false : true,
       }),
-      { iterations: 10 }
+      { iterations }
     );
     loop.start();
 
